@@ -6,7 +6,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+const todo_service_1 = require("./services/todo.service");
 const todo_entity_1 = require("./entities/todo.entity");
+const todo_controller_1 = require("./controllers/todo.controller");
 const common_1 = require("@nestjs/common");
 const typeorm_1 = require("@nestjs/typeorm");
 let TodoModule = class TodoModule {
@@ -14,8 +16,8 @@ let TodoModule = class TodoModule {
 TodoModule = __decorate([
     common_1.Module({
         imports: [typeorm_1.TypeOrmModule.forFeature([todo_entity_1.Todo])],
-        controllers: [],
-        providers: []
+        controllers: [todo_controller_1.TodoController],
+        providers: [todo_service_1.TodoService]
     })
 ], TodoModule);
 exports.TodoModule = TodoModule;

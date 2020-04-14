@@ -10,17 +10,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const typeorm_1 = require("typeorm");
+const swagger_1 = require("@nestjs/swagger");
 let Todo = class Todo {
 };
 __decorate([
+    swagger_1.ApiProperty(),
     typeorm_1.PrimaryGeneratedColumn(),
     __metadata("design:type", Number)
 ], Todo.prototype, "id", void 0);
 __decorate([
+    swagger_1.ApiProperty(),
     typeorm_1.Column(),
     __metadata("design:type", String)
 ], Todo.prototype, "title", void 0);
 __decorate([
+    swagger_1.ApiProperty(),
     typeorm_1.Column({ default: false }),
     __metadata("design:type", Boolean)
 ], Todo.prototype, "isCompleted", void 0);
